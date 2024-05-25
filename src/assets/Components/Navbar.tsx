@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-type Props = {
+type NavbarType = {
   navItems: {
     logos: string[];
     description: {
@@ -16,9 +16,7 @@ type Props = {
   };
 };
 
-// const navItems = ["Home", "About", "Contact"];
-
-export default function Navbar(props: Props) {
+export default function Navbar(props: NavbarType) {
   console.log("props", props);
   return (
     <Box sx={{ display: "flex", marginBottom: "1rem" }}>

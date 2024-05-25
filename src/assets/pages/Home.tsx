@@ -1,47 +1,68 @@
-import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
 import Navbar from "../Components/Navbar";
 import MessageInputBar from "../Components/MessageInputBar";
+import TabButtons from "../Components/TabButtons";
+import { Box, Divider } from "@mui/material";
+import AllMessages from "./AllMessages";
+import MessageBox from "./MessageBox";
 
 // import "./App.css";
 
 function Home() {
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
-
   const navLogos = ["home", "momo", "contacts"];
   const navDescription = {
     imageURL: "photu",
     titleName: "hello hello mic testing",
   };
+
   return (
     <>
-      <Grid container spacing={1}>
-        <Grid item xs={12} sm={4} md={5}>
-          <Item>
-            <Navbar
-              navItems={{ logos: navLogos, description: navDescription }}
-            />
-            <MessageInputBar />
-          </Item>
-        </Grid>
+      <Grid container spacing={1} sx={{ height: "100vh" }}>
         <Grid
           item
-          sm={8}
-          md={7}
-          display={{ xs: "none", md: "block", sm: "block" }}
+          xs={12}
+          sm={4}
+          md={5}
+          sx={{ display: "flex", flexDirection: "column", height: "100vh" }}
         >
-          <Item>
+          <Box sx={{ flexShrink: 0 }}>
             <Navbar
               navItems={{ logos: navLogos, description: navDescription }}
             />
-          </Item>
+            <MessageInputBar
+              barInfo={{ placeHolder: "search", search: true }}
+            />
+            <TabButtons tabs={["item one", "item two", "item three"]} />
+            <Divider />
+          </Box>
+          <Box sx={{ flexGrow: 1, overflowY: "scroll" }}>
+            <AllMessages />
+          </Box>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          sm={8}
+          md={7}
+          sx={{ display: "flex", flexDirection: "column", height: "100vh" }}
+        >
+          <Box sx={{ flexShrink: 0 }}>
+            <Navbar
+              navItems={{ logos: navLogos, description: navDescription }}
+            />
+          </Box>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+            }}
+          >
+            <MessageBox />
+            <MessageInputBar barInfo={{ placeHolder: "type message here" }} />
+          </Box>
         </Grid>
       </Grid>
     </>
