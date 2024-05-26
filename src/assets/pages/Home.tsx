@@ -5,6 +5,7 @@ import TabButtons from "../Components/TabButtons";
 import { Box, Divider } from "@mui/material";
 import AllMessages from "./AllMessages";
 import MessageBox from "./MessageBox";
+import Profile from "./Profile";
 
 // import "./App.css";
 
@@ -25,6 +26,7 @@ function Home() {
           md={5}
           sx={{ display: "flex", flexDirection: "column", height: "100vh" }}
         >
+          {/* <Profile /> */}
           <Box sx={{ flexShrink: 0 }}>
             <Navbar
               navItems={{ logos: navLogos, description: navDescription }}

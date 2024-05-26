@@ -1,15 +1,13 @@
 import Home from "./assets/pages/Home";
-import Navbar from "./assets/Components/Navbar";
-import MessageInputBar from "./assets/Components/MessageInputBar";
-
-// import "./App.css";
+import Profile from "./assets/pages/Profile";
 
 function App() {
   return (
     <>
       <Home />
-      {/* <MessageInputBar /> */}
-      {/* <Navbar navItems={{ logos: navLogos, description: navDescription }} /> */}
+      {/* <Profile /> */}
+
+      {/* create a context for the profile and AllMessages components to switch between them */}
     </>
   );
 }
