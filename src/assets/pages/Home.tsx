@@ -6,6 +6,7 @@ import { Box, Divider } from "@mui/material";
 import AllMessages from "./AllMessages";
 import MessageBox from "./MessageBox";
 import Profile from "./Profile";
+import { useComponentContext } from "../context/profileSwitchContext";
 
 // import "./App.css";
 
@@ -15,6 +16,8 @@ function Home() {
     imageURL: "photu",
     titleName: "hello hello mic testing",
   };
+
+  const { showComponent } = useComponentContext();
 
   return (
     <>
@@ -26,17 +29,21 @@ function Home() {
           md={5}
           sx={{ display: "flex", flexDirection: "column", height: "100vh" }}
         >
-          {/* <Profile /> */}
-          <Box sx={{ flexShrink: 0 }}>
-            <Navbar
-              navItems={{ logos: navLogos, description: navDescription }}
-            />
-            <MessageInputBar
-              barInfo={{ placeHolder: "search", search: true }}
-            />
-            <TabButtons tabs={["item one", "item two", "item three"]} />
-            <Divider />
-          </Box>
+          {showComponent ? (
+            <Profile />
+          ) : (
+            <Box sx={{ flexShrink: 0 }}>
+              <Navbar
+                navItems={{ logos: navLogos, description: navDescription }}
+              />
+              <MessageInputBar
+                barInfo={{ placeHolder: "search", search: true }}
+              />
+              <TabButtons tabs={["item one", "item two", "item three"]} />
+              <Divider />
+            </Box>
+          )}
+
           <Box sx={{ flexGrow: 1, overflowY: "scroll" }}>
             <AllMessages />
           </Box>
