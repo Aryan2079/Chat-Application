@@ -1,9 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import React from "react";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
+import { useComponentContext } from "../context/profileSwitchContext";
 
 const Profile = () => {
+  const { toggleComponent } = useComponentContext();
   return (
     <Box sx={{ flexShrink: 0, height: "100%", overflow: "hidden" }}>
       <Box
@@ -13,12 +14,13 @@ const Profile = () => {
           borderRadius: 1,
           bgcolor: "primary.main",
           display: "flex",
-          //   justifyContent: "center",
           alignItems: "center",
           padding: "2rem",
         }}
       >
-        <KeyboardArrowLeftIcon sx={{ color: "white", cursor: "pointer" }} />
+        <IconButton aria-label="delete" onClick={toggleComponent}>
+          <KeyboardArrowLeftIcon sx={{ color: "white", cursor: "pointer" }} />
+        </IconButton>
         <Typography
           sx={{ padding: 3, color: "white", cursor: "default" }}
           variant="h5"

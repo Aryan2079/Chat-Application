@@ -1,5 +1,4 @@
 import Home from "./assets/pages/Home";
-import Profile from "./assets/pages/Profile";
 import ProfileSwitchContextProvider from "./assets/context/profileSwitchContext";
 
 function App() {

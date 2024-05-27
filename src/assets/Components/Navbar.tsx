@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useComponentContext } from "../context/profileSwitchContext";
 
 type NavbarType = {
   navItems: {
@@ -17,7 +18,8 @@ type NavbarType = {
 };
 
 export default function Navbar(props: NavbarType) {
-  console.log("props", props);
+  // console.log("props", props);
+  const { toggleComponent } = useComponentContext();
   return (
     <Box sx={{ display: "flex", marginBottom: "1rem" }}>
       <CssBaseline />
@@ -32,7 +34,8 @@ export default function Navbar(props: NavbarType) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ display: { xs: "block" } }}
+            sx={{ display: { xs: "block" }, cursor: "pointer" }}
+            onClick={toggleComponent}
           >
             {props.navItems.description.imageURL}
             {props.navItems.description.titleName}
