@@ -1,4 +1,3 @@
-import React from "react";
 import Box from "@mui/material/Box";
 import InfoCard, { CardProps } from "../Components/InfoCard";
 import { Stack } from "@mui/material";
@@ -14,11 +13,8 @@ const AllMessages = () => {
       <Box
         sx={{
           width: "100%",
-          //   height: "calc(100vh-500px)",
           typography: "body1",
           overflow: "hidden",
-          //   objectFit: "fit",
-          //   backgroundColor: "yellow",
         }}
       >
         <Stack spacing={2}>
@@ -28,8 +24,6 @@ const AllMessages = () => {
           <InfoCard cardInfo={userArray} />
           <InfoCard cardInfo={userArray} />
           <InfoCard cardInfo={userArray} />
-          {/* <InfoCard cardInfo={userArray} /> */}
-          {/* <InfoCard cardInfo={userArray} /> */}
         </Stack>
       </Box>
     </>

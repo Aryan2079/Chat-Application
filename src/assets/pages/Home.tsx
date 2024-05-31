@@ -8,8 +8,6 @@ import MessageBox from "./MessageBox";
 import Profile from "./Profile";
 import { useComponentContext } from "../context/profileSwitchContext";
 
-// import "./App.css";
-
 function Home() {
   const navLogos = ["home", "momo", "contacts"];
   const navDescription = {

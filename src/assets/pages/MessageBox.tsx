@@ -8,7 +8,6 @@ const MessageBox = () => {
         flexGrow: 1,
         padding: "1%",
         overflowY: "scroll",
-        // maxHeight: "83vh",
         height: "calc(100vh - 150px)",
         backgroundColor: "skyblue",
       }}
