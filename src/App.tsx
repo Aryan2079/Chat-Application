@@ -8,6 +8,7 @@ function App() {
         <Home />
       </ProfileSwitchContextProvider>
       {/* <Profile /> */}
+      {/* create higher order components for restricted routes */}
 
       {/* create a context for the profile and AllMessages components to switch between them */}
     </>
