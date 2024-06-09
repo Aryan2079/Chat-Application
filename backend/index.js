@@ -2,8 +2,6 @@ import express from "express";
 import { PORT } from "./config.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-// const bodyParser = require("body-parser");
-// const cors = require("cors");
 
 const app = express();
 
@@ -19,16 +17,12 @@ app.get("/", (request, response) => {
 });
 
 app.post("/api/messages", (request, response) => {
-  //   console.log(request.body);
   const { message } = request.body;
-  //   console.log("HELLO1");
   console.log("Received message:", message);
 
-  // Optionally, you can send a response back to the client
   response
     .status(200)
     .json({ status: "success", message: `Message received: ${message}` });
-  // .send(`message received: ${message}`)
 });
 
 app.listen(PORT, () => {
