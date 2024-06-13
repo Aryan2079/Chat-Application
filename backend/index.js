@@ -28,3 +28,5 @@ app.post("/api/messages", (request, response) => {
 app.listen(PORT, () => {
   console.log(`App is running in port: ${PORT}`);
 });
+
+//integrate mongodb in the backend
